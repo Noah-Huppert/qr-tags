@@ -1,0 +1,25 @@
+<div id="tagView"></div>
+
+<div id="data">
+  {{#each data.tag.display }}
+    <span class="index">{{ this.name }}</span>: <span class="value">{{ this.value }}</span>
+  {{/each}}
+</div>
+
+<form action="{{ site.url }}position" method="get">
+  <input value="{{ data.tag.tagId }}" name="tagId" class="noShow">
+  <input value="Not given" name="latitude" class="noShow">
+  <input value="Not given" name="longitude" class="noShow">
+
+  <input type="submit" value="Send Location">
+</form>
+
+<script>
+  var qrCode = new QRCode("tagView", "{{ site.url }}tag/{{ data.tagId }}");
+  navigator.geolocation.getCurrentPosition(show);
+
+  function show(pos){
+    $('input[name=latitude]').val(pos.coords.latitude);
+    $('input[name=longitude]').val(pos.coords.longitude);
+  }
+</script>
