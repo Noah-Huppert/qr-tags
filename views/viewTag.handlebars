@@ -15,7 +15,7 @@
 </form>
 
 <script>
-  var qrCode = new QRCode("tagView", "{{ site.url }}tag/{{ data.tagId }}");
+  var qrCode = new QRCode("tagView", "{{ site.url }}tag/{{ data.tag.tagId }}");
   navigator.geolocation.getCurrentPosition(show);
 
   function show(pos){
