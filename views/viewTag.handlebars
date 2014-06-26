@@ -1,25 +1,45 @@
-<div id="tagView"></div>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>View Tag - {{ data.tag.prettyName }}</title>
 
-<div id="data">
-  {{#each data.tag.display }}
-    <span class="index">{{ this.name }}</span>: <span class="value">{{ this.value }}</span>
-  {{/each}}
-</div>
+    <!-- Jquery -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-<form action="{{ site.url }}position" method="get">
-  <input value="{{ data.tag.tagId }}" name="tagId" class="noShow">
-  <input value="Not given" name="latitude" class="noShow">
-  <input value="Not given" name="longitude" class="noShow">
+    <!-- Load polyfill support -->
+    <script src="{{ site.url }}bower_components/platform/platform.js"></script>
 
-  <input type="submit" value="Send Location">
-</form>
+    <!-- Load Polymer Elements -->
+    <link href="//fonts.googleapis.com/css?family=RobotoDraft:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet" type="text/css">
 
-<script>
-  var qrCode = new QRCode("tagView", "{{ site.url }}tag/{{ data.tag.tagId }}");
-  navigator.geolocation.getCurrentPosition(show);
+    <!-- Custom JS -->
+    <script src="{{ site.url }}js/qrcode.js"></script>
+    <script src="{{ site.url }}js/qr-tag.js"></script>
 
-  function show(pos){
-    $('input[name=latitude]').val(pos.coords.latitude);
-    $('input[name=longitude]').val(pos.coords.longitude);
-  }
-</script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ site.url }}css/qr-tag.css">
+  </head>
+
+  <body>
+
+    <div id="header">{{ data.tag.prettyName }}</div>
+    <div id="smallHeader">{{ data.tag.prettyName }}</div>
+
+    <div id="content">
+      <div id="qr" data-url="{{ site.url }}tag/{{ data.tag.tagId }}">&nbsp;</div>
+      <div id="qrBack"></div>
+
+      <div id="info">
+
+      </div>
+    </div><!-- .content -->
+
+    <script>
+      var tagElement = $('#qr');
+      var tagUrl = tagElement.attr('data-url');
+
+      new QRCode(document.getElementById("qr"), tagUrl);
+    </script>
+  </body>
+</html>
