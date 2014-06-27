@@ -1,74 +1,97 @@
-/*html, body{
+/*
+Colors:
+  Header:
+    Background: #3498DB
+  QR Code Outline:
+    Background: #5D417F
+  QR Code:
+    Border: #2C3E50
+  Info:
+    Background: #94CCF2
+*/
+html, body{
   width: 100%;
-  height: 2000px;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
-#header{
+#tagName{
   width: 100%;
   height: 300px;
   line-height: 200px;
-  background: #3498db;
+  margin-top: -170px;
+  position: fixed;
+  background: #3498DB;
   text-align: center;
   font-family: 'RobotoDraft';
   font-weight: bold;
-  color: #FFFFFF;
   font-size: 72px;
-  position: fixed;
-}
-
-#smallHeader{
-  width: 266px;
-  margin-top: 350px;
-  margin-left: calc(50% - 133px);
-  position: fixed;
-  text-align: center;
-  font-family: 'RobotoDraft';
-  font-weight: bold;
   color: #FFFFFF;
-  font-size: 36px;
-  z-index: 3;
-  background: #00BCD4;
-  border-bottom: 4px solid #FFFF8D;
+  z-index: 1;
 }
 
-#content > *{
-  position: relative;
-  z-index: 2;
-}
-
-#qr{
-  z-index: 4 !important;
-}
-
-#qr img{
-  width: 256px;
-  height: 256px;
-  margin: auto;
-  margin-top: 170px;
-  margin-left: calc(50% - 133px);
-  padding: 5px;
-  display: block;
-  position: relative;
-  background: #2c3e50;
-  z-index: 4 !important;
-}
-
-#qrBack{
+#qrContainer{
   width: 300px;
   height: 300px;
   margin: auto;
-  margin-top: -285px;
-  margin-left: calc(50% - 150px);
+  margin-top: 170px;
+  position: relative;
   background: #5D417F;
+  z-index: 2;
+}
+
+#qrContainer img{
+  width: 256px;
+  height: 256px;
+  margin: auto;
+  margin-top: 17px;
+  position: relative;
+  display: block;
+  border: 5px solid #2C3E50;
+}
+
+#smallTagName{
+  width: 266px;
+  height: 43px;
+  line-height: 43px;
+  margin-top: -47px;
+  margin-left: 17px;
+  position: relative;
+  display: block;
+  background: #00BCD4;
+  border-bottom: 4px solid #FFFF8D;
+  text-align: center;
+  font-family: 'RobotoDraft';
+  font-weight: bold;
+  font-size: 36px;
+  color: #FFFFFF;
 }
 
 #info{
   width: 400px;
-  height: 1000px;
+  height: 100%;
   margin: auto;
   margin-top: 50px;
-  margin-left: calc(50% - 200px);
   background: #94CCF2;
-}*/
+  text-align: center;
+  font-family: 'RobotoDraft';
+  font-weight: bold;
+  font-size: 24px;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 2;
+}
+
+#info div{
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.name{
+
+}
+
+.value{
+
+}
