@@ -24,6 +24,7 @@
   <body>
 
     <div id="tagName">{{ data.tag.prettyName }}</div>
+    <div id="smallTagName">{{ data.tag.prettyName }}</div>
 
     <div id="qrContainer" data-url="{{ site.url }}tag/{{ data.tag.tagId }}">
 
@@ -40,7 +41,6 @@
       var tagUrl = tagElement.attr('data-url');
 
       new QRCode(document.getElementById("qrContainer"), tagUrl);
-      //tagElement.append('<div id="smallTagName">{{ data.tag.prettyName }}</div>');
     </script>
   </body>
 </html>
