@@ -6,7 +6,7 @@ var app = express();
 var exhb = require('express3-handlebars');
 var handlebars = exhb.create();
 
-var dbURL = "mongodb://heroku:theraininspain@ds027719.mongolab.com:27719/qr-tag";
+var dbURL = process.env.DATABASE_URL;
 var mongo = require('mongodb');
 
 app.use(express.static(__dirname + '/public'));

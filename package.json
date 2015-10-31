@@ -7,17 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "express": "latest",
-  	"express3-handlebars": "latest",
-  	"mongodb": "latest"
+    "express": "^4.13.3",
+    "express3-handlebars": "^0.5.2",
+    "mongodb": "^2.0.47"
   },
   "repository": {
     "type": "git",
     "url": "git@heroku.com:qr-tags.git"
   },
   "author": "Noah Huppert",
-  "license": "MIT",
-  "engines": {
-    "node": "0.12.0"
-  }
+  "license": "MIT"
 }

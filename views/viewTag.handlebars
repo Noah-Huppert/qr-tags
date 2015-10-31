@@ -32,7 +32,10 @@
 
       <div id="info">
         {{#each data.tag.display}}
-          <div class="name">{{name}}:</div> <div class="value">{{value}}</div>
+          <div class="item">
+            <div class="key">{{name}}:</div> <div class="value">{{value}}</div>
+          </div>
+          <br>
         {{/each}}
       </div>
     </div><!-- .content -->
