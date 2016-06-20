@@ -1,4 +1,4 @@
-var env = 'dev';//or 'prod'
+var env = 'prod';//or 'dev'
 /* Includes */
 var express = require('express');
 var app = express();
