@@ -32,7 +32,7 @@ function useDB(collectionName, cb){
 /* Rendering */
 //Helpersvar
 siteData = {
-	"url": env == 'prod' ? "http://qr-tags.herokuapp.com/" : 'http://127.0.0.1:3000/'
+	"url": env == 'prod' ? "https://qr-tags.herokuapp.com/" : 'http://127.0.0.1:3000/'
 };
 
 function getParam(req, param){
